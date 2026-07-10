@@ -1,0 +1,60 @@
+---
+import Image from "astro/components/Image.astro";
+---
+
+<section class="section relative z-0">
+  <div class="container">
+    <hgroup class="text-center max-w-5xl mx-auto">
+      <h2>
+        Cara Mudah <span
+          class="bg-linear-to-r from-[#0179B4] to-[#88D8FF] bg-clip-text text-transparent"
+          >Merencanakan</span
+        > Liburan Anda
+      </h2>
+      <p>
+        Menjelajahi Malang Raya kini lebih mudah. Ikuti langkah sederhana ini untuk merencanakan liburan tanpa hambatan:
+      </p>
+    </hgroup>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10 items-center">
+      <div class="grid gap-10 grid-cols-[52px_1fr] relative after:absolute after:top-0 after:left-6.5 after:border-main-200 after:border-dashed after:border-l-2 after:bg-no-repeat after:w-13 after:h-[calc((100%*2)/3+20px)] after:-z-10 order-2 lg:order-1 dark:text-white">
+		<div class="w-13 h-13 rounded-full bg-[linear-gradient(45deg,#A7E2FF,#0095DE)] text-white text-xl font-semibold flex items-center justify-center">1</div>
+		<div>
+			<h3>Pilih Destinasi</h3>
+			<p>
+				Telusuri berbagai pilihan wisata alam, taman hiburan, atau wisata kuliner dan tambahkan ke itinerary Anda.
+			</p>
+		</div>
+		<div class="w-13 h-13 rounded-full bg-[linear-gradient(45deg,#A7E2FF,#0095DE)] text-white text-xl font-semibold flex items-center justify-center">2</div>
+		<div>
+			<h3>Pesan Tiket & Akomodasi</h3>
+			<p>
+				Gunakan fitur kami untuk memesan tiket wisata, transportasi, dan hotel pilihan dengan harga terbaik secara aman.
+			</p>
+		</div>
+		<div class="w-13 h-13 rounded-full bg-[linear-gradient(45deg,#A7E2FF,#0095DE)] text-white text-xl font-semibold flex items-center justify-center">3</div>
+		<div>
+			<h3>Nikmati Liburan</h3>
+			<p>
+				Dapatkan panduan digital dari aplikasi kami selama di perjalanan, dan buat momen indah bersama orang tercinta.
+			</p>
+		</div>
+
+	  </div>
+      <div class="grid order-1 lg:order-2">
+        <Image
+          src="/img/jatimpark.jpg"
+          alt="Jatim Park Vibe"
+          width={374}
+          height={398}
+          class="w-full h-auto mx-auto [grid-area:1/1/2/2] rounded-2xl object-cover"
+        />
+        <div
+          class="bg-white p-4 rounded-xl shadow hidden sm:flex sm:max-w-[60%] text-main-200 text-lg items-center gap-3 [grid-area:1/1/2/2] mt-[80%] ml-auto mb-auto relative"
+        >
+          <span class="text-2xl">🌟</span>
+          Pengalaman Terbaik
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

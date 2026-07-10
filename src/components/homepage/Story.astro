@@ -1,0 +1,42 @@
+---
+import Image from "astro/components/Image.astro";
+---
+
+<section class="section">
+  <div class="container">
+    <article
+      class="bg-[linear-gradient(45deg,#F8FDFF,#FFFFFF)] text-black rounded-2xl p-4 lg:p-10 border-2 border-main-200"
+    >
+      <h2 class="text-center">
+        <span
+          class="bg-linear-to-r from-[#0179B4] to-[#88D8FF] bg-clip-text text-transparent"
+          >Kenapa Memilih
+        </span> Malang Raya?
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 lg:gap-10 mt-4 lg:mt-10 items-stretch text-center md:text-left">
+        <div>
+          <Image
+            src="/img/waterfall.jpg"
+            alt="Air Terjun Coban Rondo"
+            width="448"
+            height="344"
+            class="w-full h-full mx-auto rounded-xl object-cover"
+          />
+        </div>
+        <div class="h-full flex flex-col justify-between align-start">
+          <p class="mb-5">
+            Malang Raya, yang mencakup Kota Malang, Kabupaten Malang, dan Kota Batu, adalah permata pariwisata di Jawa Timur. Daerah ini menawarkan perpaduan sempurna antara udara sejuk pegunungan, kekayaan sejarah, dan modernitas taman hiburan berkelas dunia.
+            <br/><br/>
+            Baik Anda mencari ketenangan di tengah alam, petualangan seru bersama keluarga, atau sekadar menikmati kuliner legendaris yang menggugah selera, Malang Raya memiliki semuanya. Keramahan penduduk lokal dan keindahan alam yang memukau menjadikan Malang destinasi yang akan selalu membuat Anda ingin kembali.
+          </p>
+          <a
+            href="/tentang-kami"
+            class="btn bg-[linear-gradient(125deg,var(--color-main-100),var(--color-main-200))] text-white border-0 rounded-xl text-lg py-3 px-6 h-auto shadow-xl hover:shadow-2xl md:mr-auto"
+            >Pelajari lebih lanjut</a
+          >
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

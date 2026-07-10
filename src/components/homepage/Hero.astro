@@ -1,0 +1,70 @@
+---
+import Image from "astro/components/Image.astro";
+import { ChevronRight } from "@lucide/astro";
+---
+
+<section class="section section-hero py-10 sm:py-20 my-0!">
+  <div class="container">
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+      <div class="text-center sm:text-left">
+        <h1>
+          Jelajahi <span
+            class="bg-linear-to-r from-[#0179B4] to-[#88D8FF] bg-clip-text text-transparent"
+            >Pesona</span
+          > Malang Raya
+        </h1>
+        <p class="mt-8 mb-10">
+          <span class="text-main-200"
+            >Keindahan Alam, Budaya, dan Hiburan Terbaik.</span
+          > Temukan pengalaman wisata tak terlupakan di Malang Raya. Dari pemandangan matahari terbit di <span class="text-main-200">Gunung Bromo</span>, keseruan di taman hiburan berkelas, hingga kelezatan kuliner lokal. Rencanakan liburan impian Anda bersama kami.
+        </p>
+        <a
+          href="/destinasi"
+          class="btn bg-[linear-gradient(125deg,var(--color-main-100),var(--color-main-200))] text-white border-0 rounded-xl text-lg py-3 px-6 h-auto shadow-xl hover:shadow-2xl"
+          >Jelajahi Sekarang <ChevronRight /></a
+        >
+
+        <p class="text-sm text-gray-400 mt-10 mb-6">
+          Telah dikunjungi oleh jutaan wisatawan:
+        </p>
+        <div class="flex gap-4 items-center">
+            <span class="font-bold text-xl text-gray-600">Wisata Nusantara</span>
+            <span class="font-bold text-xl text-gray-600">Jatim Park Group</span>
+        </div>
+      </div>
+      <div>
+        <div class="grid relative">
+          <Image
+            src="/img/hero.jpg"
+            alt="Pemandangan Bromo"
+            width="600"
+            height="400"
+            class="w-full h-auto rounded-3xl shadow-2xl [grid-area:1/1/2/2] object-cover"
+          />
+          <div class="[grid-area:1/1/2/2] mt-auto">
+            <div
+              class="border-main-200 border-2 rounded-xl p-5 bg-[linear-gradient(-125deg,#E9F6FF_0%,#ffffff_100%)] hidden sm:block sm:max-w-[40%] ml-auto translate-y-10"
+            >
+              <div class="flex flex-wrap gap-3 items-center">
+                <p class="text-xl text-black font-bold">
+                  2.4M<span class="text-main-200">+</span>
+                </p>
+              </div>
+              <p class="text-main-200 my-2">Wisatawan Puas</p>
+
+              <div class="flex flex-wrap gap-3 items-center">
+                <span class="text-gray-400 text-sm">⭐ 4.9/5 Rating rata-rata</span>
+              </div>
+            </div>
+            <div
+              class="bg-white p-4 rounded-xl shadow hidden sm:flex sm:max-w-[50%] text-main-200 text-lg items-center gap-3 absolute top-10 -left-10"
+            >
+              <span class="text-2xl">🌋</span>
+              Destinasi Terbaik
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

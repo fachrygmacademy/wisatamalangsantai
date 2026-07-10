@@ -1,0 +1,89 @@
+---
+const today = new Date();
+import Image from "astro/components/Image.astro";
+---
+
+<footer class="footer w-full bg-[#F2FAFF] gap-0 dark:bg-black">
+  <div class="footer-top w-full py-15">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10">
+        <div>
+          <a href="/" class="text-3xl font-bold text-main-200 flex items-center gap-2">
+            <span class="text-4xl">🏔️</span> Malang Raya
+          </a>
+          <p class="mt-4">
+            Jelajahi keindahan alam, budaya, dan kuliner terbaik di Malang Raya dengan pengalaman tak terlupakan.
+          </p>
+
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-10">
+          <div>
+            <h3 class="text-main-200">Destinasi</h3>
+
+            <nav class="grid gap-3">
+              <a href="#" class="hover:text-main-200 hover:underline">Wisata Alam</a>
+              <a href="#" class="hover:text-main-200 hover:underline">Taman Hiburan</a>
+              <a href="#" class="hover:text-main-200 hover:underline">Wisata Sejarah</a>
+              <a href="#" class="hover:text-main-200 hover:underline">Wisata Edukasi</a>
+              <a href="#" class="hover:text-main-200 hover:underline">Pusat Oleh-oleh</a>
+            </nav>
+          </div>
+          <div>
+            <h3 class="text-main-200">Layanan</h3>
+
+            <nav class="grid gap-3">
+              <a href="#" class="hover:text-main-200 hover:underline">Paket Wisata</a>
+              <a href="#" class="hover:text-main-200 hover:underline">Sewa Kendaraan</a>
+              <a href="#" class="hover:text-main-200 hover:underline">Pemandu Wisata</a>
+              <a href="#" class="hover:text-main-200 hover:underline">Rekomendasi Hotel</a>
+              <a href="#" class="hover:text-main-200 hover:underline">Tiket Atraksi</a>
+            </nav>
+          </div>
+          <div>
+            <h3 class="text-main-200">Informasi</h3>
+
+            <nav class="grid gap-3">
+              <a href="#" class="hover:text-main-200 hover:underline">Syarat & Ketentuan</a>
+              <a href="#" class="hover:text-main-200 hover:underline">Kebijakan Privasi</a>
+              <a href="#" class="hover:text-main-200 hover:underline">Tips Perjalanan</a>
+              <a href="#" class="hover:text-main-200 hover:underline">Transportasi Umum</a>
+              <a href="#" class="hover:text-main-200 hover:underline">Hubungi Kami</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-btm w-full">
+    <div class="container pb-5">
+      <hr class="border-t border-main-200 mb-5" />
+      <div class="flex flex-wrap gap-4 items-center justify-between">
+          <div class="flex flex-wrap gap-3 items-center">
+            <a href="#" class="transition hover:-rotate-6" title="Facebook">
+              <svg class="icon" width="32" height="32">
+                <use xlink:href="#soc1"></use>
+              </svg>
+            </a>
+            <a href="#" class="transition hover:-rotate-6" title="Instagram">
+              <svg class="icon" width="32" height="32">
+                <use xlink:href="#soc2"></use>
+              </svg>
+            </a>
+            <a href="#" class="transition hover:-rotate-6" title="Linkedin">
+              <svg class="icon" width="32" height="32">
+                <use xlink:href="#soc3"></use>
+              </svg>
+            </a>
+            <a href="#" class="transition hover:-rotate-6" title="Youtube">
+              <svg class="icon" width="32" height="32">
+                <use xlink:href="#soc4"></use>
+              </svg>
+            </a>
+          </div>
+        <p>
+          Wisata Malang Raya &copy; {today.getFullYear()}. Hak Cipta Dilindungi
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/MainLayout.astro";
+---
+
+<Layout title="Kontak - Malang Raya" description="Hubungi kami untuk pertanyaan dan masukan.">
+    <section class="relative py-20 bg-base-100 min-h-screen">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Hubungi <span class="bg-[linear-gradient(125deg,var(--color-main-100),var(--color-main-200))] bg-clip-text text-transparent">Kami</span></h1>
+                <p class="text-lg text-base-content/80 leading-relaxed">Kami siap membantu mewujudkan liburan impian Anda di Malang Raya. Jangan ragu untuk mengirim pesan kepada tim kami untuk informasi lebih lanjut.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-base-200 rounded-3xl overflow-hidden shadow-2xl border border-base-300 mx-auto max-w-6xl">
+                <div class="relative h-full min-h-[400px] lg:min-h-full flex flex-col justify-end p-10 lg:p-14">
+                    <img 
+                        src="/img/malang_city.jpg" 
+                        alt="Pemandangan Kota Malang" 
+                        class="absolute inset-0 w-full h-full object-cover z-0"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10"></div>
+                    <div class="relative z-20">
+                        <h3 class="text-3xl font-bold text-white mb-4">Kantor Pusat</h3>
+                        <p class="text-white/90 text-lg leading-relaxed">Jl. Ijen Boulevard No. 1, Malang<br/>Jawa Timur, Indonesia</p>
+                        <div class="mt-8 flex flex-col gap-4 text-white/90 text-lg">
+                            <p class="flex items-center gap-3">
+                                <span class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">📞</span> 
+                                +62 812 3456 7890
+                            </p>
+                            <p class="flex items-center gap-3">
+                                <span class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">✉️</span> 
+                                halo@wisatamalangraya.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-10 lg:p-14 bg-base-100">
+                    <h3 class="text-3xl font-bold mb-8">Kirim Pesan</h3>
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah terkirim. Tim kami akan segera menghubungi Anda.');">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="form-control w-full">
+                                <label class="label"><span class="label-text font-semibold text-base-content/80">Nama Lengkap</span></label>
+                                <input type="text" placeholder="Masukkan nama Anda" class="input input-bordered w-full bg-base-200/50 focus:bg-base-100 transition-colors" required />
+                            </div>
+                            <div class="form-control w-full">
+                                <label class="label"><span class="label-text font-semibold text-base-content/80">Email</span></label>
+                                <input type="email" placeholder="Masukkan email Anda" class="input input-bordered w-full bg-base-200/50 focus:bg-base-100 transition-colors" required />
+                            </div>
+                        </div>
+                        <div class="form-control w-full">
+                            <label class="label"><span class="label-text font-semibold text-base-content/80">Subjek</span></label>
+                            <input type="text" placeholder="Topik pesan Anda" class="input input-bordered w-full bg-base-200/50 focus:bg-base-100 transition-colors" required />
+                        </div>
+                        <div class="form-control w-full">
+                            <label class="label"><span class="label-text font-semibold text-base-content/80">Pesan</span></label>
+                            <textarea placeholder="Tulis detail pertanyaan atau masukan Anda di sini..." class="textarea textarea-bordered h-40 w-full bg-base-200/50 focus:bg-base-100 transition-colors resize-none" required></textarea>
+                        </div>
+                        <button type="submit" class="btn w-full bg-[linear-gradient(125deg,var(--color-main-100),var(--color-main-200))] text-white border-0 shadow-lg hover:shadow-2xl transition-all text-lg h-auto py-4 rounded-xl mt-4">
+                            Kirim Pesan Sekarang
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

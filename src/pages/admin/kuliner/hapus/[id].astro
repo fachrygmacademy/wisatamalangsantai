@@ -1,0 +1,17 @@
+---
+// File: src/pages/admin/kuliner/hapus/[id].astro
+export const prerender = false;
+import { db } from '../../../../lib/db';
+
+const { id } = Astro.params;
+
+if (id) {
+  try {
+    await db.from('kuliner_malang').delete().eq('id', id);
+  } catch (err) {
+    console.error('Gagal menghapus:', err);
+  }
+}
+
+return Astro.redirect('/admin');
+---

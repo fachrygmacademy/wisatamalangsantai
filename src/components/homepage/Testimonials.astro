@@ -1,0 +1,144 @@
+---
+import Image from "astro/components/Image.astro";
+---
+
+<section class="section overflow-hidden">
+  <div class="container">
+    <hgroup class="text-center max-w-5xl mx-auto">
+      <h2>
+        <span
+          class="bg-linear-to-r from-[#0179B4] to-[#88D8FF] bg-clip-text text-transparent"
+          >Ulasan Wisatawan:</span
+        >
+        <br />Pengalaman Mereka Bersama Kami
+      </h2>
+      <p>
+        Lihat apa kata mereka yang telah menjelajahi keindahan Malang Raya:
+      </p>
+    </hgroup>
+
+    <div class="py-15 grid gap-10 relative z-0 after:absolute after:top-0 after:-left-10 after:bg-[url('/img/shape/shape3.svg')] after:bg-no-repeat after:w-31.5 after:h-31.5 after:bg-position-[left_top]] after:bg-contain after:-z-10 
+	
+	before:absolute before:bottom-0 before:-right-10 before:bg-[url('/img/shape/shape4.svg')] before:bg-no-repeat before:w-31.5 before:h-31.5 before:bg-position-[right_bottom]] before:bg-contain before:-z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <article
+          class="border-2 border-main-200 rounded-xl p-4 lg:p-10 bg-[radial-gradient(circle_at_top_left,#EBF8FF_2%,#FDFEFF_50%)] grid grid-cols-[100px_1fr] gap-4 text-black"
+        >
+          <Image
+            src="/img/cmnts/ava1.webp"
+            alt="John D."
+            width={100}
+            height={100}
+            format="webp"
+            quality="low"
+            class="rounded-xl w-24 h-24 object-cover"
+          />
+          <div class="text-sm md:text-base">
+            <p>
+              “Liburan ke Bromo sangat menakjubkan. Pelayanan paket wisatanya sangat memuaskan dan tepat waktu.”
+            </p>
+            <p><b>- Budi S.</b></p>
+          </div>
+        </article>
+
+        <article
+          class="border-2 border-main-200 rounded-xl p-4 lg:p-10 bg-[radial-gradient(circle_at_top_left,#EBF8FF_2%,#FDFEFF_50%)] grid grid-cols-[100px_1fr] gap-4 text-black"
+        >
+          <Image
+            src="/img/cmnts/ava2.webp"
+            alt="Siti A."
+            width={100}
+            height={100}
+            format="webp"
+            quality="low"
+            class="rounded-xl w-24 h-24 object-cover"
+          />
+          <div class="text-sm md:text-base">
+            <p>
+              “Anak-anak sangat senang bermain di Jatim Park. Transportasi dan tiket sudah diurus semua, kami tinggal nikmati liburan.”
+            </p>
+            <p><b>- Siti A.</b></p>
+          </div>
+        </article>
+      </div>
+
+      <div
+        class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10 items-center max-w-6xl mx-auto"
+      >
+        <div class="text-center">
+          <div
+            class="bg-linear-to-r from-[#0179B4] to-[#88D8FF] bg-clip-text text-transparent font-bold text-3xl sm:text-5xl"
+          >
+            100,000+
+          </div>
+          <p>Wisatawan Terlayani</p>
+        </div>
+        <div class="text-center">
+          <div
+            class="bg-linear-to-r from-[#0179B4] to-[#88D8FF] bg-clip-text text-transparent font-bold text-3xl sm:text-5xl"
+          >
+            500+
+          </div>
+          <p>Pemandu Wisata Profesional</p>
+        </div>
+        <div class="text-center">
+          <div
+            class="bg-linear-to-r from-[#0179B4] to-[#88D8FF] bg-clip-text text-transparent font-bold text-3xl sm:text-5xl"
+          >
+            99%
+          </div>
+          <p>Tingkat Kepuasan</p>
+        </div>
+        <div class="text-center">
+          <div
+            class="bg-linear-to-r from-[#0179B4] to-[#88D8FF] bg-clip-text text-transparent font-bold text-3xl sm:text-5xl"
+          >
+            150+
+          </div>
+          <p>Destinasi Pilihan</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <article
+          class="border-2 border-main-200 rounded-xl p-4 lg:p-10 bg-[radial-gradient(circle_at_top_left,#EBF8FF_2%,#FDFEFF_50%)] grid grid-cols-[100px_1fr] gap-4 text-black"
+        >
+          <Image
+            src="/img/cmnts/ava3.webp"
+            alt="Joshua T."
+            width={100}
+            height={100}
+            format="webp"
+            quality="low"
+            class="rounded-xl w-24 h-24 object-cover"
+          />
+          <div class="text-sm md:text-base">
+            <p>
+              “Kuliner Bakso Malang sungguh enak. Referensi tempat makan dari tim Malang Raya tidak pernah mengecewakan.”
+            </p>
+            <p><b>- Rina K.</b></p>
+          </div>
+        </article>
+
+        <article
+          class="border-2 border-main-200 rounded-xl p-4 lg:p-10 bg-[radial-gradient(circle_at_top_left,#EBF8FF_2%,#FDFEFF_50%)] grid grid-cols-[100px_1fr] gap-4 text-black"
+        >
+          <Image
+            src="/img/cmnts/ava4.webp"
+            alt="Anton P."
+            width={100}
+            height={100}
+            format="webp"
+            quality="low"
+            class="rounded-xl w-24 h-24 object-cover"
+          />
+          <div class="text-sm md:text-base">
+            <p>
+              “Panduan yang diberikan sangat membantu, terutama bagi kami yang baru pertama kali mengunjungi Kota Batu.”
+            </p>
+            <p><b>- Anton P.</b></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

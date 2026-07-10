@@ -1,0 +1,111 @@
+---
+// File: src/layouts/AdminLayout.astro
+export interface Props {
+  title: string;
+  activeMenu?: 'dashboard' | 'destinasi' | 'kuliner' | 'artikel';
+}
+
+import '../styles/global.css';
+const { title, activeMenu = 'dashboard' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title} - Admin Malang Raya</title>
+  <style>
+    /* CSS Cadangan untuk menjamin layout tidak berantakan */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar-admin {
+      width: 260px;
+      background-color: #0f172a;
+      color: #ffffff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 50;
+      box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+    }
+    .content-admin {
+      flex: 1;
+      margin-left: 260px;
+      padding: 2rem;
+      width: calc(100% - 260px);
+    }
+    .nav-link {
+      display: flex;
+      items-center: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 8px;
+      transition: all 0.2s;
+    }
+    .nav-link:hover, .nav-link.active {
+      background-color: #2563eb;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR KIRI -->
+  <aside class="sidebar-admin">
+    <div style="padding: 1.5rem;">
+      <!-- Logo -->
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; border-bottom: 1px solid #1e293b; padding-bottom: 1rem;">
+        <div style="width: 36px; height: 36px; background: #2563eb; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">M</div>
+        <div>
+          <span style="font-weight: 800; font-size: 1.1rem; display: block; letter-spacing: 1px;">ADMIN PANEL</span>
+          <span style="font-size: 0.75rem; color: #94a3b8;">Wisata Malang Raya</span>
+        </div>
+      </div>
+
+      <!-- Menu -->
+      <nav>
+        <a href="/admin" class={`nav-link ${activeMenu === 'dashboard' ? 'active' : ''}`}>
+          <span>📊</span> Dashboard
+        </a>
+        <a href="/admin/artikel" class={`nav-link ${activeMenu === 'artikel' ? 'active' : ''}`}>
+          <span>📝</span> Kelola Artikel
+        </a>
+        <a href="/admin/destinasi" class={`nav-link ${activeMenu === 'destinasi' ? 'active' : ''}`}>
+          <span>🏞️</span> Kelola Destinasi
+        </a>
+        <a href="/admin/kuliner" class={`nav-link ${activeMenu === 'kuliner' ? 'active' : ''}`}>
+          <span>🍜</span> Kelola Kuliner
+        </a>
+      </nav>
+    </div>
+
+    <!-- Tombol Kembali -->
+    <div style="padding: 1.5rem; border-top: 1px solid #1e293b;">
+      <a href="/" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px; background: #1e293b; color: #e2e8f0; text-decoration: none; border-radius: 8px; font-size: 0.875rem; font-weight: 600;">
+        <span>🌐</span> Lihat Website
+      </a>
+    </div>
+  </aside>
+
+  <!-- KONTEN UTAMA KANAN -->
+  <main class="content-admin">
+    <slot />
+  </main>
+
+</body>
+</html>
