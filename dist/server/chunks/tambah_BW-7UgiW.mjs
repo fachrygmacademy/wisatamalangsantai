@@ -1,0 +1,56 @@
+import { E as createComponent, T as createAstro, V as __exportAll, f as renderTemplate, g as maybeRenderHead, i as renderComponent } from "./server_CoTwvy9j.mjs";
+import "./compiler_DWKY1NWp.mjs";
+import { t as $$AdminLayout } from "./AdminLayout_C-m_7sIV.mjs";
+import { t as db } from "./db_DzqpBJ2g.mjs";
+import path from "node:path";
+import fs from "node:fs/promises";
+//#region src/pages/admin/kuliner/tambah.astro
+var tambah_exports = /* @__PURE__ */ __exportAll({
+	default: () => $$Tambah,
+	file: () => $$file,
+	prerender: () => false,
+	url: () => $$url
+});
+createAstro("https://heal-net-self.vercel.app/");
+var $$Tambah = createComponent(async ($$result, $$props, $$slots) => {
+	const Astro = $$result.createAstro($$props, $$slots);
+	Astro.self = $$Tambah;
+	let errorMsg = "";
+	if (Astro.request.method === "POST") try {
+		const data = await Astro.request.formData();
+		let foto_url = "";
+		const fotoFile = data.get("foto_file");
+		if (fotoFile && fotoFile.size > 0) {
+			const buffer = Buffer.from(await fotoFile.arrayBuffer());
+			const fileName = Date.now() + "-" + fotoFile.name.replace(/\s+/g, "-");
+			const filePath = path.join(process.cwd(), "public", "img", fileName);
+			await fs.writeFile(filePath, buffer);
+			foto_url = "/img/" + fileName;
+		} else foto_url = data.get("foto_url") || "";
+		const { error } = await db.from("kuliner_malang").insert([{
+			nama_tempat: data.get("nama_tempat"),
+			slug: data.get("slug"),
+			kategori: data.get("kategori"),
+			kisaran_harga: data.get("kisaran_harga"),
+			lokasi: data.get("lokasi"),
+			foto_url,
+			rating: data.get("rating"),
+			deskripsi: data.get("deskripsi")
+		}]);
+		if (error) throw error;
+		return Astro.redirect("/admin/kuliner");
+	} catch (error) {
+		errorMsg = "Gagal menyimpan data: " + error.message;
+	}
+	return renderTemplate`${renderComponent($$result, "AdminLayout", $$AdminLayout, {
+		"title": "Tambah Kuliner Baru",
+		"activeMenu": "kuliner"
+	}, { "default": ($$result) => renderTemplate`${maybeRenderHead($$result)}<div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-gray-100"><div class="flex justify-between items-center mb-6 border-b border-gray-100 pb-4"><h1 class="text-xl font-bold text-gray-800">🍜 Tambah Tempat Kuliner Baru</h1><a href="/admin/kuliner" class="text-sm text-gray-500 hover:text-gray-800 font-medium">✕ Batal</a></div>${errorMsg && renderTemplate`<div class="bg-red-50 text-red-600 p-4 rounded-lg mb-6 text-sm font-medium">${errorMsg}</div>`}<form method="POST" enctype="multipart/form-data" class="space-y-6"><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="block text-sm font-bold text-gray-700 mb-2">Nama Tempat Makan *</label><input type="text" name="nama_tempat" required placeholder="Contoh: Bakso President" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-emerald-500 text-sm text-gray-900"></div><div><label class="block text-sm font-bold text-gray-700 mb-2">Slug URL *</label><input type="text" name="slug" required placeholder="Contoh: bakso-president" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-emerald-500 text-sm text-gray-900"></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="block text-sm font-bold text-gray-700 mb-2">Kategori *</label><select name="kategori" required class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-emerald-500 text-sm bg-white text-gray-900"><option value="Legendaris">Legendaris</option><option value="Cafe &amp; Nongkrong">Cafe & Nongkrong</option><option value="Makanan Berat">Makanan Berat</option><option value="Jajanan">Jajanan</option><option value="Oleh-oleh">Oleh-oleh</option></select></div><div><label class="block text-sm font-bold text-gray-700 mb-2">Kisaran Harga</label><input type="text" name="kisaran_harga" placeholder="Contoh: Rp 20.000 - Rp 45.000" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-emerald-500 text-sm text-gray-900"></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="block text-sm font-bold text-gray-700 mb-2">Lokasi / Alamat</label><input type="text" name="lokasi" placeholder="Contoh: Jl. Batanghari No.5, Malang" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-emerald-500 text-sm text-gray-900"></div><div><label class="block text-sm font-bold text-gray-700 mb-2">Rating (1.0 - 5.0)</label><input type="number" step="0.1" min="1" max="5" name="rating" value="4.7" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-emerald-500 text-sm text-gray-900"></div></div><div><label class="block text-sm font-bold text-gray-700 mb-2">Upload Foto Kuliner</label><input type="file" name="foto_file" accept="image/*" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-emerald-500 text-sm text-gray-900 bg-white"><p class="text-xs text-gray-400 mt-1">Pilih gambar dari komputer Anda. Jika dikosongkan, bisa mengisi URL manual di bawah.</p></div><div><label class="block text-sm font-bold text-gray-700 mb-2">Atau Path Foto (Manual)</label><input type="text" name="foto_url" placeholder="/img/bakso.jpg" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-emerald-500 text-sm text-gray-900"></div><div><label class="block text-sm font-bold text-gray-700 mb-2">Deskripsi Kuliner</label><textarea name="deskripsi" rows="4" placeholder="Jelaskan kelezatan dan keunikan makanan di sini..." class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-emerald-500 text-sm text-gray-900"></textarea></div><div class="flex justify-end gap-3 pt-4 border-t border-gray-100"><a href="/admin/kuliner" class="px-6 py-2.5 rounded-xl border border-gray-300 text-gray-600 font-semibold text-sm hover:bg-gray-50 transition">Batal</a><button type="submit" class="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-md transition">Simpan Kuliner</button></div></form></div>` })}`;
+}, "D:/Astro/Coba-Wisata-Astro/src/pages/admin/kuliner/tambah.astro", void 0);
+var $$file = "D:/Astro/Coba-Wisata-Astro/src/pages/admin/kuliner/tambah.astro";
+var $$url = "/admin/kuliner/tambah";
+//#endregion
+//#region \0virtual:astro:page:src/pages/admin/kuliner/tambah@_@astro
+var page = () => tambah_exports;
+//#endregion
+export { page };
