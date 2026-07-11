@@ -1,4 +1,7 @@
 ---
+import { supabase } from '../db/supabase';
+
+const { data, error } = await supabase.from("todos").select('*');
 import Layout from "../layouts/MainLayout.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
@@ -18,3 +21,13 @@ import Testimonials from "../components/homepage/Testimonials.astro";
 	<HowWorks />
 	<Testimonials />
 </Layout>
+
+{
+  (
+    <ul>
+      {data.map((entry) => (
+        <li>{entry.name}</li>
+      ))}
+    </ul>
+  )
+}
