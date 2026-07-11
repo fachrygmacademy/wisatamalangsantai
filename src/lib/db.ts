@@ -4,3 +4,4 @@ const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL || 'https://placeholder.
 const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY || 'placeholder_key';
 
 export const db = createClient(supabaseUrl, supabaseKey);
+
